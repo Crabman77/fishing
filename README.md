@@ -40,8 +40,7 @@ if the unified_inventory mod is actived there is a button for classification or 
 **contest_add wday hour minutes duration**  
 > - contest_add 0 15 30 3600  
 > - Wday 0=all, 1=sunday, 2=Monday, ..., 7=Saturday  
-
-[demo video youtube](https://youtu.be/8rt8g3F2Gmk)  
+ 
 
 
 ![fishing]( http://nsm08.casimages.com/img/2015/07/01/1507010157379539613411965.png)

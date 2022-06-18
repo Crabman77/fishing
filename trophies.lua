@@ -6,18 +6,19 @@
 -- Supports:				animal_clownfish, animal_fish_blue_white
 -----------------------------------------------------------------------------------------------
 
+local S = fishing.get_translator
 
 local trophy = {
 --	  mod						 item				 name				icon
-    {"fishing",     "fish_raw",            "Fish",              "fishing_fish_raw.png"},
-	{"fishing",     "carp_raw",            "Carp",	            "fishing_carp_raw.png"},
-	{"fishing",     "perch_raw",           "Perch",             "fishing_perch_raw.png"},
-	{"fishing",     "catfish_raw",         "Catfish",           "fishing_catfish_raw.png"},
-	{"fishing",     "pike_raw",            "Northern Pike",     "fishing_pike_raw.png"},
-	{"fishing",     "clownfish_raw",       "Clownfish",         "fishing_clownfish_raw.png"},
-	{"fishing",	    "bluewhite_raw",       "Bluewhite",         "fishing_bluewhite_raw.png"},
-	{"fishing",	    "exoticfish_raw",      "Exoticfish",         "fishing_exoticfish_raw.png"},
-	{"fishing",     "shark_raw",           "Shark",	            "fishing_shark_raw.png"},
+    {"fishing",     "fish_raw",            S("Fish"),              "fishing_fish_raw.png"},
+	{"fishing",     "carp_raw",            S("Carp"),	           "fishing_carp_raw.png"},
+	{"fishing",     "perch_raw",           S("Perch"),             "fishing_perch_raw.png"},
+	{"fishing",     "catfish_raw",         S("Catfish"),           "fishing_catfish_raw.png"},
+	{"fishing",     "pike_raw",            S("Northern Pike"),     "fishing_pike_raw.png"},
+	{"fishing",     "clownfish_raw",       S("Clownfish"),         "fishing_clownfish_raw.png"},
+	{"fishing",	    "bluewhite_raw",       S("Bluewhite"),         "fishing_bluewhite_raw.png"},
+	{"fishing",	    "exoticfish_raw",      S("Exoticfish"),        "fishing_exoticfish_raw.png"},
+	{"fishing",     "shark_raw",           S("Shark"),	           "fishing_shark_raw.png"},
 }
 
 local function has_trophy_privilege(meta, player)
@@ -33,7 +34,7 @@ for i in pairs(trophy) do
 	local 	name = 			trophy[i][3]
 	local 	icon = 			trophy[i][4]
 	minetest.register_node("fishing:trophy_"..item, {
-		description = fishing_setting.func.S(name.." Trophy"),
+		description = S("@1 Trophy", name),
 		inventory_image = "fishing_trophy_plank.png^"..icon.."^fishing_trophy_label.png",
 		drawtype = "nodebox",
 		tiles = {
@@ -65,7 +66,7 @@ for i in pairs(trophy) do
 		after_place_node = function(pos, placer)
 			local meta = minetest.get_meta(pos)
 			meta:set_string("owner",  placer:get_player_name() or "")
-			meta:set_string("infotext",  fishing_setting.func.S("This Huge "..name.." was caught by the Famous Angler %s !"):format((placer:get_player_name() or "")))
+			meta:set_string("infotext",  S("This Huge @1 was caught by the Famous Angler @2 !", name,  (placer:get_player_name() or "")))
 		end,
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)

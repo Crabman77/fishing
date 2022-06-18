@@ -8,11 +8,14 @@
 -- Dependencies: 			default
 -----------------------------------------------------------------------------------------------
 
+local S = fishing.get_translator
+
+
 -----------------------------------------------------------------------------------------------
 -- WORM ITEM
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:bait_worm", {
-	description = fishing_setting.func.S("Worm"),
+	description = S("Worm"),
 	groups = { fishing_bait=1 },
 	inventory_image = "fishing_bait_worm.png",
 	on_place = function(itemstack, placer, pointed_thing)
@@ -140,18 +143,18 @@ minetest.register_craft({
 -- GETTING WORMS
 -----------------------------------------------------------------------------------------------
 -- get worms from digging in dirt:
-if fishing_setting.settings["new_worm_source"] == false then
+if fishing.settings["new_worm_source"] == false then
 	minetest.register_node(":default:dirt", {
-		description = fishing_setting.func.S("Dirt"),
+		description = S("Dirt"),
 		tiles = {"default_dirt.png"},
 		is_ground_content = true,
 		groups = {crumbly=3},
 		sounds = default.node_sound_dirt_defaults(),
 		after_dig_node = function (pos, oldnode, oldmetadata, digger)
-				if math.random(1, 100) <= fishing_setting.settings["worm_chance"] then
+				if math.random(1, 100) <= fishing.settings["worm_chance"] then
 				local tool_in_use = digger:get_wielded_item():get_name()
 				if tool_in_use == "" or tool_in_use == "default:dirt" then
-					if fishing_setting.settings["worm_is_mob"] == true then
+					if fishing.settings["worm_is_mob"] == true then
 						minetest.add_entity({x = pos.x, y = pos.y+0.4, z = pos.z}, "fishing:bait_worm_entity")
 					else
 						local inv = digger:get_inventory()
@@ -204,8 +207,8 @@ else
 		minetest.set_node(pt.under, {name="farming:soil"})
 		minetest.sound_play("default_dig_crumbly", {pos = pt.under, gain = 0.5,})
 
-		if math.random(1, 100) < fishing_setting.settings["worm_chance"] then
-			if fishing_setting.settings["worm_is_mob"] == true then
+		if math.random(1, 100) < fishing.settings["worm_chance"] then
+			if fishing.settings["worm_is_mob"] == true then
 				minetest.add_entity({x=pt.under.x, y=pt.under.y+0.4, z=pt.under.z}, "fishing:bait_worm_entity")
 			else
 				local inv = user:get_inventory()
@@ -214,7 +217,7 @@ else
 				end
 			end
 		end
-		if not minetest.setting_getbool("creative_mode") then
+		if not minetest.settings:get_bool("creative_mode") then
 			local tool_name = itemstack:get_name()
 			itemstack:add_wear(65535/(uses-1))
 			if itemstack:get_wear() == 0 and minetest.get_modpath("invtweak") then
@@ -229,28 +232,28 @@ else
 
 	-- didn't change the hoes, just here because hoe_on_use is local
 	minetest.register_tool(":farming:hoe_wood", {
-		description = fishing_setting.func.S("Wooden Hoe"),
+		description = S("Wooden Hoe"),
 		inventory_image = "farming_tool_woodhoe.png",
 		on_use = function(itemstack, user, pointed_thing)
 			return hoe_on_use(itemstack, user, pointed_thing, 30)
 		end,
 	})
 	minetest.register_tool(":farming:hoe_stone", {
-		description = fishing_setting.func.S("Stone Hoe"),
+		description = S("Stone Hoe"),
 		inventory_image = "farming_tool_stonehoe.png",
 		on_use = function(itemstack, user, pointed_thing)
 			return hoe_on_use(itemstack, user, pointed_thing, 90)
 		end,
 	})
 	minetest.register_tool(":farming:hoe_steel", {
-		description = fishing_setting.func.S("Steel Hoe"),
+		description = S("Steel Hoe"),
 		inventory_image = "farming_tool_steelhoe.png",
 		on_use = function(itemstack, user, pointed_thing)
 			return hoe_on_use(itemstack, user, pointed_thing, 200)
 		end,
 	})
 	minetest.register_tool(":farming:hoe_bronze", {
-		description = fishing_setting.func.S("Bronze Hoe"),
+		description = S("Bronze Hoe"),
 		inventory_image = "farming_tool_bronzehoe.png",
 		on_use = function(itemstack, user, pointed_thing)
 			return hoe_on_use(itemstack, user, pointed_thing, 220)

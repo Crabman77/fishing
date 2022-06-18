@@ -1,7 +1,10 @@
 
+local S = fishing.get_translator
+
+
 -- baitball
 minetest.register_craftitem("fishing:baitball", {
-	description = fishing_setting.func.S("Bait Ball"),
+	description = S("Bait Ball"),
 	inventory_image = "fishing_baitball.png",
 	stack_max = 99,
 })
@@ -16,7 +19,7 @@ minetest.register_craft({
 
 -- baitball_shark
 minetest.register_craftitem("fishing:baitball_shark", {
-	description = fishing_setting.func.S("Shark Bait Ball"),
+	description = S("Shark Bait Ball"),
 	inventory_image = "fishing_baitball_shark.png",
 	stack_max = 99,
 })

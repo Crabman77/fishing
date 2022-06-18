@@ -23,14 +23,14 @@ minetest.register_craft({
 })
 
 if minetest.get_modpath("moreblocks") ~= nil then
-minetest.register_craft({
-	output = "fishing:pole_wood",
-	recipe = {
-		{"",            "",            "group:stick"     },
-		{"",            "group:stick", "moreblocks:rope" },
-		{"group:stick", "",            "moreblocks:rope" },
-	}
-})
+	minetest.register_craft({
+		output = "fishing:pole_wood",
+		recipe = {
+			{"",            "",            "group:stick"     },
+			{"",            "group:stick", "moreblocks:rope" },
+			{"group:stick", "",            "moreblocks:rope" },
+		}
+	})
 end
 
 if minetest.get_modpath("ropes") ~= nil then
@@ -47,14 +47,14 @@ end
 -- Mithril Fishing Pole
 -- Some subgames have bundled all of moreores' content in their default mod; just check for mithril
 if (minetest.get_modpath("moreores") ~= nil or minetest.registered_items["default:mithril_ingot"]) and minetest.get_modpath("mobs") ~= nil then
-minetest.register_craft({
-	output = "fishing:pole_perfect",
-	recipe = {
-		{"",                            "",                       "moreores:mithril_ingot" },
-		{"", 							"moreores:mithril_ingot", "mobs:spider_cobweb"     },
-		{"moreores:mithril_ingot",      "",                       "mobs:spider_cobweb"     },
-	}
-})
+	minetest.register_craft({
+		output = "fishing:pole_perfect",
+		recipe = {
+			{"",                            "",                       "moreores:mithril_ingot" },
+			{"", 							"moreores:mithril_ingot", "mobs:spider_cobweb"     },
+			{"moreores:mithril_ingot",      "",                       "mobs:spider_cobweb"     },
+		}
+	})
 end
 
 -----------------------------------------------------------------------------------------------

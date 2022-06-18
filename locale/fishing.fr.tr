@@ -1,0 +1,162 @@
+# textdomain: fishing
+
+
+### bobber_shark.lua ###
+
+You didn't catch anything.=Vous n'avez rien attrapé.
+The bait is still there.=L'appât est toujours là.
+Your fish escaped.=Le poisson s'est échappé.
+You caught @1.=Vous avez attrapé @1.
+Haha, Fishing is prohibited outside water!=Haha, pêcher est interdit en dehors de l'eau!
+
+
+### prizes.lua ###
+
+a Fish=un poisson
+a Carp=une carpe
+a Northern Pike=un brochet
+a Perch=une pêrche
+a Catfish=un poisson chat
+a Clownfish=un poisson clown
+a Bluewhite=un poisson bleu
+a Exoticfish=un poisson Exotique
+a small Shark=un requin moyen
+some Seaweed=des algues
+a String=une ficelle
+a Twig=une brindille
+a Rat=un rat
+a Green Kelp=une algue verte
+some very old Boots=de très vieilles bottes
+some very old Leggings=de très vieilles jambières
+a very old ChestPlate=un très vieux plastron
+an old Fishing Pole=une vieille canne à pêche
+a Gold Coin=une pièce en or
+a very old Helmet=un très vieux casque
+a very old Shield=un très vieux bouclier
+a very old Sword=une très vieille épée
+a mese block=un bloc de mese
+a Nyan Cat=un bloc de Nyan Cat
+a Diamond Block=un block de diamant
+a tropical fish=un poisson tropicale
+a big Shark=un gros requin
+a medium Shark=un requin moyen
+
+
+### trophies.lua ###
+
+Fish=poisson
+Carp=carpe
+Perch=pêrche
+Catfish=poisson chat
+Northern Pike=brochet
+Clownfish=poisson clown
+Bluewhite=poisson bleu
+Exoticfish=poisson exotique
+Shark=requin
+@1 Trophy=Trophée @1
+This Huge @1 was caught by the Famous Angler @2 !=Cet énorme @1 a été attrapé par le célèbre pêcheur @2 !
+
+
+### baits.lua ###
+
+Bait Corn=Appâts au Maïs
+Bait Bread=Appâts au Pain
+
+
+### worms.lua ###
+
+Worm=Ver
+Dirt=Terre
+Wooden Hoe=Hoe en bois
+Stone Hoe=Hoe en pierre
+Steel Hoe=Hoe en fer
+Bronze Hoe=Hoe en bronze
+
+
+### fishes.lua ###
+
+Roasted Fish=Poisson grillé
+Sushi (Hoso Maki)=Sushi (Hoso Maki)
+Roasted Shark=Requin grillé
+Roasted Northern Pike=Brochet grillé
+
+
+### functions.lua ###
+
+Lucky @1, he caught a treasure, @2!=@1 est chanceux, il a attrapé un trésor, @2
+You caught a treasure, @1!=Vous attrapez un trésor, @1!
+Fishing configuration=Configuration de pêche
+Fish chance=Chance des poissons
+Shark chance=Chance des requins
+Treasure chance=Chance de trésor
+Worm chance=Chance des ver
+Escape chance=Chance de décrochage
+Bobber view range=Vue maximum des bouchons
+Display messages in chat=Afficher les messages dans le tchat
+Simple pole deco=Canne déco
+Poles wearout=Usure de canne
+Enable treasure=Activer les trésors
+New worm source (reboot)=Nouveau style de Ver (reboot)
+Worm is a mob (reboot)=Les vers sont des entitées (reboot)
+Abort=Annuler
+Ok=Ok
+A fishing contest is in progress. (remaining time @1)=Un concours de pêche est en cours. (temps restant @1)
+You win a new trophy, you have caught @1 @2.=Vous gagnez un trophée, vous avez attrapé @1 @2.
+Yeah, @1 caught @2.=Wouah, @1 a attrapé @2.
+Fishing Menu=Menu de pêche
+Contest rankings=Classement du concours
+Contests=Concours
+Configuration=Configuration
+Hunger info=Info de faim
+Close=Fermer
+Fishing Menu Configuration=Menu configuration pêche
+Attention, Fishing contest start (duration @1)!!!=Attention, un concours de pêche commence(durée @1)!!!
+End of fishing contest.=Fin du concours de pêche.
+Wday Hours Minutes duration(in sec) (ex: 1 15 40 3600)=Wjour Heure Minutes durée(en secondes) (ex: 1 15 40 3600)
+Add contest (admin only)=Ajout un concours (Admin seulement)
+Invalid argument wday, 0-7 (0=all 1=Sunday).=Argument non valide wjour, 0-7 (0=tout les jours 1=Dimanche)
+Invalid argument hour, 0-23.=Argument heure non valide, 0-23.
+Invalid argument minutes, 0-59.=Argument minutes non valide, 0-59.
+New contest registered @1 @2:@3 duration @4.=Nouveau concours ajouté @1 @2:@3 durée @4.
+List number(show by contest_show command)=Numéro de concours(affiché par la commande contest_show)
+Delete planned contest(admin only)=Supprime un concours planifié (admin uniquement)
+Invalid usage, see /help contest_del.=Utilisation non valide, voir /help contest_del.
+Contest no found.=Concours introuvable
+Contest deleted.=Concours effacé
+Display planned contest(admin only)=Affiche les concours planifiés (admin uniquement)
+Duration in seconds=Durée en secondes
+Start a contest (admin only)=Lancer un concours
+Contest already in progress.=Concours déjà en cours
+Contest started, duration:@1.=Concours lancé, durée:@1.
+Stop a contest (admin only)=Arrete un councours (admin uniquement)
+No contest in progress.=Aucun concours en cours.
+Contest terminated.=Concours terminé.
+Fishing contest=Concours de pêche
+Duration(in sec)=Durée(en secondes)
+Bobber number limit=Limite de bouchons
+Enable contests=Activer le concours
+Reset rankings=Réinitialiser le classement
+Fishing contest rankings=Classement du concours de pêche
+No=No
+Name=Nom
+Fish Total=Nombre de poissons
+Fishing Info Center=Centre info de pêche
+Chance to catch=Chance d'attraper
+Show fishing menu (admin only)=Affiche le menu de pêche
+Display ranking=Affiche le classement
+ATTENTION, the fishing contest will end in 30 seconds.=ATTENTION, le concours de pêche se terminera dans 30 secondes.
+
+
+### baitball.lua ###
+
+Bait Ball=Amorce à poisson
+Shark Bait Ball=Amorce à carnassier
+
+
+### poles.lua ###
+
+Fishing Pole=Canne à pêche
+Perfect Fishing Pole=Canne à pêche parfaite
+Sorry, there is another bobber!=Désolé,il y a déjà un autre bouchon ici!
+You can't have mores @1 bobbers!=Vous ne pouvez pas avoir plus de @1 flotteurs!
+You can't fishing in a bottle!=Vous ne pouvez pas pêcher dans une bouteille!

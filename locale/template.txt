@@ -1,152 +1,162 @@
-# Template
-### baits.lua ###
-Bait Corn = 
-Bait Bread = 
+# textdomain: fishing
 
-
-### bobber.lua ###
-You didn't catch anything. = 
-The bait is still there. = 
-Your fish escaped. = 
-You caught a Fish. = 
-You caught a Clownfish. = 
-You caught a Bluewhite. = 
-You caught a Carp. = 
-You caught a Perch. = 
-You caught a Catfish. = 
-You caught a Exoticfish. = 
-You caught a tropical fish. = 
-You caught a Twig. = 
-You caught a Rat. = 
-You caught some Seaweed. = 
-You caught a Green Kelp. = 
-You caught a String. = 
 
 ### bobber_shark.lua ###
-You caught a small Shark. = 
-You caught a Northern Pike. = 
-You caught an old Fishing Pole. = 
-You caught some very old Boots. = 
-You caught a Gold Coin. = 
-You caught a very old Helmet. = 
-You caught a very old Shield. = 
-You caught a very old Sword. = 
-You caught a mese block. = 
-You caught a Nyan Cat. = 
-You caught a Diamond Block. = 
-Haha, Fishing is prohibited outside water! = 
+
+You didn't catch anything.=
+The bait is still there.=
+Your fish escaped.=
+You caught @1.=
+Haha, Fishing is prohibited outside water!=
 
 
-### crafting.lua ###
-Bait Ball = 
-Shark Bait Ball = 
+### prizes.lua ###
+
+a Fish=
+a Carp=
+a Northern Pike=
+a Perch=
+a Catfish=
+a Clownfish=
+a Bluewhite=
+a Exoticfish=
+a small Shark=
+some Seaweed=
+a String=
+a Twig=
+a Rat=
+a Green Kelp=
+some very old Boots=
+some very old Leggings=
+a very old ChestPlate=
+an old Fishing Pole=
+a Gold Coin=
+a very old Helmet=
+a very old Shield=
+a very old Sword=
+a mese block=
+a Nyan Cat=
+a Diamond Block=
+a tropical fish=
+a big Shark=
+a medium Shark=
+
+
+### trophies.lua ###
+
+Fish=
+Carp=
+Perch=
+Catfish=
+Northern Pike=
+Clownfish=
+Bluewhite=
+Exoticfish=
+Shark=
+@1 Trophy=
+This Huge @1 was caught by the Famous Angler @2 !=
+
+
+### baits.lua ###
+
+Bait Corn=
+Bait Bread=
+
+
+### worms.lua ###
+
+Worm=
+Dirt=
+Wooden Hoe=
+Stone Hoe=
+Steel Hoe=
+Bronze Hoe=
 
 
 ### fishes.lua ###
-Fish =
-Roasted Fish =
-Sushi (Hoso Maki) =
-Clownfish = 
-Bluefish =
-Carp = 
-Perch = 
-Catfish = 
-Exoticfish = 
-Shark =
-Roasted Shark =
-Northern Pike =
-Roasted Northern Pike =
+
+Roasted Fish=
+Sushi (Hoso Maki)=
+Roasted Shark=
+Roasted Northern Pike=
 
 
 ### functions.lua ###
-You don't have the server priviledge! = 
-You win a new trophy, you have caught %s fish. = 
-You win a new trophy, you have caught %s shark. = 
-You win a new trophy, you have caught %s pike. = 
-You win a new trophy, you have caught %s clownfish. = 
-You win a new trophy, you have caught %s bluewhite. = 
-You win a new trophy, you have caught %s carp. = 
-You win a new trophy, you have caught %s perch. = 
-You win a new trophy, you have caught %s catfish. = 
-You win a new trophy, you have caught %s exoticfish. = 
-Lucky %s, he caught the treasure, %s! = 
-You caught the treasure, %s!= 
-Yeah, %s caught a Fish. = 
-Yeah, %s caught a Clownfish. = 
-Yeah, %s caught a Bluefish. = 
-Yeah, %s caught a Carp. = 
-Yeah, %s caught a Perch. = 
-Yeah, %s caught a Catfish. = 
-Yeah, %s caught a Exoticfish. = 
-Yeah, %s caught a Northern Pike. = 
-Yeah, %s caught a small Shark. = 
-A fishing contest is in progress. (remaining time %s) = 
-Attention, Fishing contest start(duration %s)!!! = 
-WARNING, Fishing contest will finish in 30 seconds. = 
-End of fishing contest. = 
-Fishing configuration = 
-Fish chance = 
-Shark chance = 
-Treasure chance = 
-Worm chance = 
-Escape chance = 
-Bobber view range = 
-Display messages in chat = 
-Simple pole deco = 
-Poles wearout = 
-Enable treasure = 
-New worm source (reboot) = 
-Worm is a mob (reboot) = 
-Abort = 
-OK = 
-Fishing Menu = 
-Contest rankings = 
-Contests = 
-Configuration = 
-Close = 
 
-Fishing contest = 
-Duration(in sec) = 
-Bobber number limit = 
-Enable contests = 
-Reset rankings (type 'yes') =
-Fishing contest rankings = 
+Lucky @1, he caught a treasure, @2!=
+You caught a treasure, @1!=
+Fishing configuration=
+Fish chance=
+Shark chance=
+Treasure chance=
+Worm chance=
+Escape chance=
+Bobber view range=
+Display messages in chat=
+Simple pole deco=
+Poles wearout=
+Enable treasure=
+New worm source (reboot)=
+Worm is a mob (reboot)=
+Abort=
+Ok=
+A fishing contest is in progress. (remaining time @1)=
+You win a new trophy, you have caught @1 @2.=
+Yeah, @1 caught @2.=
+Fishing Menu=
+Contest rankings=
+Contests=
+Configuration=
+Hunger info=
+Close=
+Fishing Menu Configuration=
+Attention, Fishing contest start (duration @1)!!!=
+End of fishing contest.=
+Wday Hours Minutes duration(in sec) (ex: 1 15 40 3600)=
+Add contest (admin only)=
+Invalid argument wday, 0-7 (0=all 1=Sunday).=
+Invalid argument hour, 0-23.=
+Invalid argument minutes, 0-59.=
+New contest registered @1 @2:@3 duration @4.=
+List number(show by contest_show command)=
+Delete planned contest(admin only)=
+Invalid usage, see /help contest_del.=
+Contest no found.=
+Contest deleted.=
+Display planned contest(admin only)=
+Duration in seconds=
+Start a contest (admin only)=
+Contest already in progress.=
+Contest started, duration:@1.=
+Stop a contest (admin only)=
+No contest in progress.=
+Contest terminated.=
+Fishing contest=
+Duration(in sec)=
+Bobber number limit=
+Enable contests=
+Reset rankings=
+Fishing contest rankings=
+No=
+Name=
+Fish Total=
+Fishing Info Center=
+Chance to catch=
+Show fishing menu (admin only)=
+Display ranking=
+ATTENTION, the fishing contest will end in 30 seconds.=
 
-### material.lua ###
-Show information about hunger fish = 
+
+### baitball.lua ###
+
+Bait Ball=
+Shark Bait Ball=
 
 
 ### poles.lua ###
-Fishing Pole = 
-Perfect Fishing Pole = 
-You don't fishing in a bottle! = 
-You don't have mores %s bobbers! = 
 
-### trophies.lua ###
-Fish Trophy = 
-Northern Pike Trophy = 
-Shark Trophy = 
-Clownfish Trophy = 
-Bluefish Trophy = 
-Carp Trophy = 
-Perch Trophy = 
-Catfish Trophy = 
-Exoticfish Trophy = 
-This Huge Fish was caught by the Famous Angler %s ! = 
-This Huge Northern Pike was caught by the Famous Angler %s ! = 
-This Huge Shark was caught by the Famous Angler %s ! = 
-This Huge Clownfish was caught by the Famous Angler %s ! = 
-This Huge Bluefish was caught by the Famous Angler %s ! = 
-This Huge Carp was caught by the Famous Angler %s ! = 
-This Huge Perch was caught by the Famous Angler %s ! = 
-This Huge Catfish was caught by the Famous Angler %s ! = 
-This Huge Exoticfish was caught by the Famous Angler %s ! = 
-
-### worms.lua ###
-Worm = 
-Dirt = 
-Wooden Hoe = 
-Stone Hoe = 
-Steel Hoe = 
-Bronze Hoe = 
-
+Fishing Pole=
+Perfect Fishing Pole=
+Sorry, there is another bobber!=
+You can't have mores @1 bobbers!=
+You can't fishing in a bottle!=

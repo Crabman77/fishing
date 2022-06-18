@@ -2,19 +2,19 @@
 -- Fishing Pole
 -----------------------------------------------------------------------------------------------
 
-local S = fishing_setting.func.S
+local S = fishing.get_translator
 
 local function rod_wear(itemstack, user, pointed_thing, uses)
 	itemstack:add_wear(65535/(uses-1))
 	return itemstack
 end
 
-fishing_setting.poles = {}
-fishing_setting.poles.wood = {["name"] = "wood", ["max_use"] = 30, ["desc"] = S("Fishing Pole"),["bobber_max"] = 2 }
-fishing_setting.poles.perfect = {["name"] = "perfect", ["max_use"] = 1500, ["desc"] = S("Perfect Fishing Pole"),["bobber_max"] = 5}
+fishing.poles = {}
+fishing.poles.wood = {["name"] = "wood", ["max_use"] = 30, ["desc"] = S("Fishing Pole"),["bobber_max"] = 2 }
+fishing.poles.perfect = {["name"] = "perfect", ["max_use"] = 1500, ["desc"] = S("Perfect Fishing Pole"),["bobber_max"] = 5}
 
 
-for _,pole in pairs(fishing_setting.poles) do
+for _,pole in pairs(fishing.poles) do
 	local bobbermax = pole["bobber_max"]
 	minetest.register_tool("fishing:pole_".. pole.name, {
 		description = pole.desc,
@@ -32,12 +32,12 @@ for _,pole in pairs(fishing_setting.poles) do
 				local player_name = user:get_player_name()
 				local inv = user:get_inventory()
 				local bait = inv:get_stack("main", user:get_wield_index()+1 ):get_name()
-				if fishing_setting.baits[bait] == nil then return nil end
+				if fishing.baits[bait] == nil then return nil end
 
 				local objs = minetest.get_objects_inside_radius(pt.under, 1)
 				for m, obj in pairs(objs) do
 					if obj:get_luaentity() ~= nil and string.find(obj:get_luaentity().name, "fishing:bobber") then
-						if fishing_setting.settings["message"] == true then
+						if fishing.settings["message"] == true then
 							minetest.chat_send_player(player_name, S("Sorry, there is another bobber!"))
 						end
 						return nil
@@ -47,8 +47,8 @@ for _,pole in pairs(fishing_setting.poles) do
 				--if contest then player must have only 2 boober
 				local bobber_nb = 0
 				local bobber_max
-				if fishing_setting.contest["contest"] ~= nil and fishing_setting.contest["contest"] == true then
-					bobber_max = fishing_setting.contest["bobber_nb"]
+				if fishing.contest["contest"] ~= nil and fishing.contest["contest"] == true then
+					bobber_max = fishing.contest["bobber_nb"]
 				else
 					bobber_max = bobbermax
 				end
@@ -61,8 +61,8 @@ for _,pole in pairs(fishing_setting.poles) do
 					end
 				end
 				if bobber_nb >= bobber_max then
-					if fishing_setting.settings["message"] == true then
-						minetest.chat_send_player(player_name, S("You don't have mores %s bobbers!"):format(bobber_max))
+					if fishing.settings["message"] == true then
+						minetest.chat_send_player(player_name, S("You can't have mores @1 bobbers!", bobber_max))
 					end
 					return nil
 				end
@@ -77,11 +77,11 @@ for _,pole in pairs(fishing_setting.poles) do
 				end
 				--if water == -3 nodes
 				if nodes < 2 then
-					if fishing_setting.settings["message"] == true then minetest.chat_send_player(player_name, S("You don't fishing in a bottle!")) end
+					if fishing.settings["message"] == true then minetest.chat_send_player(player_name, S("You can't fishing in a bottle!")) end
 					return nil
 				end
 				local new_pos = {x=pt.under.x, y=pt.under.y+(45/64), z=pt.under.z}
-				local ent = minetest.add_entity({interval = 1,x=new_pos.x, y=new_pos.y, z=new_pos.z}, fishing_setting.baits[bait].bobber)
+				local ent = minetest.add_entity({interval = 1,x=new_pos.x, y=new_pos.y, z=new_pos.z}, fishing.baits[bait].bobber)
 				if not ent then return nil end
 				local luaentity = ent:get_luaentity()
 				local node = minetest.get_node_or_nil(pt.under)
@@ -94,11 +94,11 @@ for _,pole in pairs(fishing_setting.poles) do
 				luaentity.bait = bait
 				luaentity.old_pos = new_pos
 				luaentity.old_pos2 = true
-				if not fishing_setting.is_creative_mode then
+				if not fishing.is_creative_mode then
 					inv:remove_item("main", bait)
 				end
 				minetest.sound_play("fishing_bobber2", {pos = new_pos, gain = 0.5})
-				if fishing_setting.settings["wear_out"] == true and not fishing_setting.is_creative_mode then
+				if fishing.settings["wear_out"] == true and not fishing.is_creative_mode then
 					return rod_wear(itemstack, user, pointed_thing, pole.max_use)
 				else
 					return {name="fishing:pole_".. pole.name, count=1, wear=0, metadata=""}
@@ -108,7 +108,7 @@ for _,pole in pairs(fishing_setting.poles) do
 		end,
 
 		on_place = function(itemstack, placer, pointed_thing)
-			if fishing_setting.settings["simple_deco_fishing_pole"] == false then return end
+			if fishing.settings["simple_deco_fishing_pole"] == false then return end
 			local pt = pointed_thing
 			local pt_under_name = minetest.get_node(pt.under).name
 			if string.find(pt_under_name, "water_") == nil then
@@ -124,7 +124,7 @@ for _,pole in pairs(fishing_setting.poles) do
 				minetest.set_node(pt.above, {name="fishing:pole_".. pole.name .."_deco", param2=direction})
 				local meta = minetest.get_meta(pt.above)
 				meta:set_int("wear", wear)
-				if not fishing_setting.is_creative_mode then
+				if not fishing.is_creative_mode then
 					itemstack:take_item()
 				end
 			end
@@ -139,6 +139,7 @@ for _,pole in pairs(fishing_setting.poles) do
 		drawtype = "nodebox",
 		paramtype = "light",
 		paramtype2 = "facedir",
+		use_texture_alpha = "clip",
 		tiles = {
 			"fishing_pole_".. pole.name .."_simple.png",
 			"fishing_pole_".. pole.name .."_simple.png",

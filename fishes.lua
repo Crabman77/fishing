@@ -4,11 +4,13 @@
 -- License (code & textures): WTFPL
 -----------------------------------------------------------------------------------------------
 
+local S = fishing.get_translator
+
 -----------------------------------------------------------------------------------------------
 -- Fish
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:fish_raw", {
-	description = fishing_setting.func.S("Fish"),
+	description = S("Fish"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_fish_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -18,7 +20,7 @@ minetest.register_craftitem("fishing:fish_raw", {
 -- Roasted Fish
 -----------------------------------------------------
 minetest.register_craftitem("fishing:fish_cooked", {
-	description = fishing_setting.func.S("Roasted Fish"),
+	description = S("Roasted Fish"),
 	groups = {},
 	inventory_image = "fishing_fish_cooked.png",
 	on_use = minetest.item_eat(4),
@@ -27,7 +29,7 @@ minetest.register_craftitem("fishing:fish_cooked", {
 -- Sushi
 -----------------------------------------------------
 minetest.register_craftitem("fishing:sushi", {
-	description = fishing_setting.func.S("Sushi (Hoso Maki)"),
+	description = S("Sushi (Hoso Maki)"),
 	groups = {},
 	inventory_image = "fishing_sushi.png",
 	on_use = minetest.item_eat(6),
@@ -37,7 +39,7 @@ minetest.register_craftitem("fishing:sushi", {
 -- clownfish
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:clownfish_raw", {
-	description = fishing_setting.func.S("Clownfish"),
+	description = S("Clownfish"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_clownfish_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -47,7 +49,7 @@ minetest.register_craftitem("fishing:clownfish_raw", {
 -- bluewhite
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:bluewhite_raw", {
-	description = fishing_setting.func.S("Bluewhite"),
+	description = S("Bluewhite"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_bluewhite_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -56,7 +58,7 @@ minetest.register_craftitem("fishing:bluewhite_raw", {
 -- exoticfish
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:exoticfish_raw", {
-	description = fishing_setting.func.S("Exotic"),
+	description = S("Exoticfish"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_exoticfish_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -66,7 +68,7 @@ minetest.register_craftitem("fishing:exoticfish_raw", {
 -- carp
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:carp_raw", {
-	description = fishing_setting.func.S("Carp"),
+	description = S("Carp"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_carp_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -76,7 +78,7 @@ minetest.register_craftitem("fishing:carp_raw", {
 -- perch
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:perch_raw", {
-	description = fishing_setting.func.S("Perch"),
+	description = S("Perch"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_perch_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -86,7 +88,7 @@ minetest.register_craftitem("fishing:perch_raw", {
 -- catfish
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:catfish_raw", {
-	description = fishing_setting.func.S("Catfish"),
+	description = S("Catfish"),
 	groups = {fishbait=1, fishraw=1},
 	inventory_image = "fishing_catfish_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -97,7 +99,7 @@ minetest.register_craftitem("fishing:catfish_raw", {
 -- Whatthef... it's a freakin' Shark!
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:shark_raw", {
-	description = fishing_setting.func.S("Shark"),
+	description = S("Shark"),
 	groups = {fishbait=1},
 	inventory_image = "fishing_shark_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -107,7 +109,7 @@ minetest.register_craftitem("fishing:shark_raw", {
 -- Roasted Shark
 -----------------------------------------------------
 minetest.register_craftitem("fishing:shark_cooked", {
-	description = fishing_setting.func.S("Roasted Shark"),
+	description = S("Roasted Shark"),
 	groups = {},
 	inventory_image = "fishing_shark_cooked.png",
 	on_use = minetest.item_eat(6),
@@ -117,7 +119,7 @@ minetest.register_craftitem("fishing:shark_cooked", {
 -- Pike
 -----------------------------------------------------------------------------------------------
 minetest.register_craftitem("fishing:pike_raw", {
-	description = fishing_setting.func.S("Northern Pike"),
+	description = S("Northern Pike"),
 	groups = {fishbait=1},
 	inventory_image = "fishing_pike_raw.png",
 	 on_use = minetest.item_eat(2),
@@ -126,7 +128,7 @@ minetest.register_craftitem("fishing:pike_raw", {
 -- Roasted Pike
 -----------------------------------------------------
 minetest.register_craftitem("fishing:pike_cooked", {
-	description = fishing_setting.func.S("Roasted Northern Pike"),
+	description = S("Roasted Northern Pike"),
 	groups = {},
 	inventory_image = "fishing_pike_cooked.png",
 	on_use = minetest.item_eat(6),
